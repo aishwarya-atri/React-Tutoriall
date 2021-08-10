@@ -1,0 +1,36 @@
+.mainPage{
+    margin : auto;
+
+}
+.App{
+    font-family: cursive;
+    font-size: larger;
+}
+.Title{
+    background: url("images/library1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+   height: 44em;
+}
+.title-text{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    color: white;
+    height: 44em;
+    font-weight: bold;
+    letter-spacing: 7px
+}
+.form{
+    margin: auto;
+
+
+}
+input,select{
+    margin-left: 1.5em !important;
+
+}
+/*.book_create{*/
+/*    padding:2em;*/
+
+/*}*/
