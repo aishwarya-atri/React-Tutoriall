@@ -1,0 +1,68 @@
+{
+  "books": [
+    {
+      "book_name": "Book 1",
+      "author": "Author 1",
+      "published_date": "2021-08-13",
+      "genre": "Comedy",
+      "quantity": 50,
+      "id": 1
+    },
+    {
+      "book_name": "Book 2",
+      "author": "Author 2",
+      "published_date": "2012-08-07",
+      "genre": "Mystery",
+      "quantity": 11,
+      "id": 2
+    },
+    {
+      "book_name": "Book 3",
+      "author": "Author 3",
+      "published_date": "2012-08-13",
+      "genre": "Horror",
+      "quantity": 7,
+      "id": 3
+    },
+    {
+      "book_name": "Book 4",
+      "author": "Author 2",
+      "published_date": "2021-08-13",
+      "genre": "Historic",
+      "quantity": 7,
+      "id": 4
+    },
+    {
+      "book_name": "Book 5",
+      "author": "Author 5",
+      "genre": "Other",
+      "published_date": "2011-08-11",
+      "quantity": 6,
+      "id": 5
+    },
+    {
+      "book_name": "Book 6",
+      "author": "Author 6",
+      "published_date": "2000-08-13",
+      "genre": "Romance",
+      "quantity": 20,
+      "id": 6
+    },
+    {
+      "book_name": "Book 7",
+      "author": "Author 3",
+      "published_date": "2021-08-10",
+      "genre": "Mystery",
+      "quantity": 1,
+      "id": 7
+    },
+    {
+      "book_name": "Book 8",
+      "author": "Author 1",
+      "published_date": "1970-08-13",
+      "genre": "Sci-fi",
+      "quantity": 17,
+      "id": 8
+    }
+  ]
+}

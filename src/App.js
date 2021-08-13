@@ -1,28 +1,27 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Title from "./title";
 import Navbar from "./navbar";
-import CreateUpdateForm from "./createUpdateForm"
+import CreateForm from "./createForm";
 import BookList from "./bookList";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import UpdateForm                       from "./updateForm";
+import Graphics                         from "./Graphics";
 function App() {
   return (
-
-    <div className="App">
-        <Navbar/>
-        <Router>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
         <Switch>
-        <Route path="/create" component={CreateUpdateForm} />
-            <Route path="/list" component={BookList} />
-            <Route path="" component={Title} />
-
+          <Route path="/create" component={CreateForm} />
+          <Route path="/lists" component={BookList} />
+          <Route path="/update/:id" component={UpdateForm}></Route>
+          <Route path="/graphics" component={Graphics} />
+          <Route path="" component={Title} />
         </Switch>
-            </Router>
-    </div>
-
+      </div>
+    </BrowserRouter>
   );
 }
 
 export default App;
-
