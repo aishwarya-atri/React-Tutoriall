@@ -10,9 +10,9 @@ function BookList() {
 
   async function delete_book(index) {
     if (window.confirm("Are you sure you wish to delete this item?")) {
-      await axios.delete("https://react-demo-library.herokuapp.com/db/books" + index["id"]);
+      await axios.delete("https://react-demo-library.herokuapp.com/db/books/" + index["id"]);
 
-      const result = await axios("https://react-demo-library.herokuapp.com/db/books");
+      const result = await axios("https://react-demo-library.herokuapp.com/db/books/");
 
       setData(result.data);
     }
@@ -24,7 +24,7 @@ function BookList() {
 
   useEffect(() => {
     (async () => {
-      const result = await axios("https://react-demo-library.herokuapp.com/db/books");
+      const result = await axios("https://react-demo-library.herokuapp.com/db/books/");
       setData(result.data);
     })();
   }, []);

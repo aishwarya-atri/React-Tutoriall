@@ -25,7 +25,7 @@ function CreateForm() {
 
     output["book_name"] = data["bookname"];
     output["author"] = data["author"];
-    output["published_date"] = startDate.toISOString().split("T")[0];
+    output["published_date"] = startDate.toLocaleString().split(",")[0]
     output["genre"] = data["genre"]["value"];
     output["quantity"] = parseInt(data["quantity"]);
 
@@ -47,7 +47,7 @@ function CreateForm() {
         // same book
 
         await axios.put(
-          "https://react-demo-library.herokuapp.com/db/books" + get_response.data[0]["id"],
+          "https://react-demo-library.herokuapp.com/db/books/" + get_response.data[0]["id"],
           get_response.data[0]
         );
         history.push("/lists");

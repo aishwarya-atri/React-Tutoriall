@@ -58,8 +58,8 @@ describe("My Application", () => {
 
     userEvent.click(screen.getByText(/Submit/));
 
-    let da = new Date().toISOString().split("T")[0];
-    await waitFor(() => screen.getByText("Book 9", { timeout: 100000 }));
+    let da = new Date().toLocaleString().split(",")[0];
+    await waitFor(() => screen.getByText("Book 9"));
     let rows = screen.getAllByRole("row");
     let last = rows[rows.length - 1];
     expect(last).toHaveTextContent(/Author 1/);
@@ -139,7 +139,7 @@ describe("My Application", () => {
 
     userEvent.click(screen.getByText(/Update/));
 
-    da = new Date().toISOString().split("T")[0];
+    da = new Date().toLocaleString().split(",")[0];
     await waitFor(() => screen.getByText("Book 9", { timeout: 100000 }));
     let rows1 = screen.getAllByRole("row");
     let last = rows1[rows1.length - 1];

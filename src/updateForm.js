@@ -21,7 +21,7 @@ function UpdateForm() {
       const result = await axios("https://react-demo-library.herokuapp.com/db/books/" + params.id);
       setData(result.data);
 
-      setStartDate(new Date(result.data["published_date"] + "T00:00:00"));
+      setStartDate(new Date(result.data["published_date"]+", 00:00:00"));
     })();
   }, [params.id]);
 
@@ -30,7 +30,7 @@ function UpdateForm() {
 
     output["book_name"] = data["bookname"];
     output["author"] = data["author"];
-    output["published_date"] = startDate.toISOString().split("T")[0];
+    output["published_date"] = startDate.toLocaleString().split(",")[0];
     output["genre"] = data["genre"]["label"];
     output["quantity"] = data["quantity"];
     await axios.put("https://react-demo-library.herokuapp.com/db/books/" + params.id, output);
@@ -41,7 +41,7 @@ function UpdateForm() {
   if (data !== null && data.length !== 0) {
     return (
       <div className="p-lg-4 p-sm-2 p-md-2 m-auto form">
-        <div className="text-center pt-4">Add book in the library!</div>
+        <div className="text-center pt-4">Update book</div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <br />
           <br />
@@ -74,7 +74,8 @@ function UpdateForm() {
           name="publisheddate"
           selected={startDate}
           onChange={(date) => setStartDate(date)}
-          selected={startDate} />
+
+           />
           </span>
           <br />
           <br />
