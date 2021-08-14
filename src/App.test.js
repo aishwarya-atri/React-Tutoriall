@@ -145,7 +145,7 @@ describe("My Application", () => {
     fireEvent.click(screen.getByText(/Update/));
 
     da = new Date().toLocaleString().split(",")[0];
-    await waitFor(() => screen.getByText("", { timeout: 10000 }));
+    await waitFor(() => screen.getByText("Book 9", { timeout: 10000 }));
     let rows1 = screen.getAllByRole("row");
     let last = rows1[rows1.length - 1];
     expect(last).toHaveTextContent(/Author Changed/);
