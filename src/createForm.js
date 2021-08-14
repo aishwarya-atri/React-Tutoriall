@@ -18,7 +18,7 @@ function CreateForm() {
   const onSubmit = async (data) => {
     // check whether book is present, if yes, update quantity
     var get_response = await axios.get(
-      "http://localhost:5000/books?book_name=" + data["bookname"]
+      "https://react-demo-library.herokuapp.com/db/books?book_name=" + data["bookname"]
     );
 
     let output = {};
