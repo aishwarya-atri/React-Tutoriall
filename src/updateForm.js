@@ -8,7 +8,7 @@ import { Input } from "@material-ui/core";
 import { useParams } from "react-router-dom";
 import DatePicker from "react-datepicker";
 
-function UpdateForm(props) {
+function UpdateForm() {
   const { control, handleSubmit } = useForm();
   const [data, setData] = useState([]);
   const history = useHistory();

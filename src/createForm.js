@@ -30,7 +30,7 @@ function CreateForm() {
     output["quantity"] = parseInt(data["quantity"]);
 
     if (get_response.data.length === 0) {
-      // already exisits
+      // already exists
 
       await axios.post("https://react-demo-library.herokuapp.com/db/books", output);
       history.push("/lists");
