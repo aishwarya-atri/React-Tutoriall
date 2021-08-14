@@ -41,7 +41,7 @@ function UpdateForm() {
   if (data !== null && data.length !== 0) {
     return (
       <div className="p-lg-4 p-sm-2 p-md-2 m-auto form">
-        <div className="text-center pt-4">Update book</div>
+        <div className="text-center pt-4">Form for updating the book!</div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <br />
           <br />

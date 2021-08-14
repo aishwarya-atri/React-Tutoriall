@@ -11,10 +11,8 @@ import Moment from "moment";
 import "@testing-library/jest-dom/extend-expect";
 import { createMemoryHistory } from "history";
 import { Router } from "react-router-dom";
-import userEvent from "@testing-library/user-event";
 import App from "./App";
 
-import { MemoryRouter } from "react-router-dom";
 const keyDownEvent = {
   key: "ArrowDown",
 };
@@ -56,7 +54,7 @@ describe("My Application", () => {
       target: { value: "5" },
     });
 
-    userEvent.click(screen.getByText(/Submit/));
+    fireEvent.click(screen.getByText(/Submit/));
 
     let da = new Date().toLocaleString().split(",")[0];
     await waitFor(() => screen.getByText("Book 9"));
@@ -137,7 +135,7 @@ describe("My Application", () => {
     fireEvent.keyDown(placeholder, keyDownEvent);
     fireEvent.click(screen.getByText("Drama"));
 
-    userEvent.click(screen.getByText(/Update/));
+    fireEvent.click(screen.getByText(/Update/));
 
     da = new Date().toLocaleString().split(",")[0];
     await waitFor(() => screen.getByText("Book 9", { timeout: 100000 }));
