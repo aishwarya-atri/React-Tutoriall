@@ -10,7 +10,7 @@ function BookList() {
 
   async function delete_book(index) {
     if (window.confirm("Are you sure you wish to delete this item?")) {
-      await axios.delete("http://localhost:5000/books/" + index["id"]);
+      await axios.delete("https://react-demo-library.herokuapp.com/db/books" + index["id"]);
 
       const result = await axios("http://localhost:5000/books");
 

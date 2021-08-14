@@ -32,7 +32,7 @@ function CreateForm() {
     if (get_response.data.length === 0) {
       // already exisits
 
-      await axios.post("http://localhost:5000/books/", output);
+      await axios.post("https://react-demo-library.herokuapp.com/db/books", output);
       history.push("/lists");
     } else {
       //update Quantity
@@ -47,7 +47,7 @@ function CreateForm() {
         // same book
 
         await axios.put(
-          "http://localhost:5000/books/" + get_response.data[0]["id"],
+          "https://react-demo-library.herokuapp.com/db/books" + get_response.data[0]["id"],
           get_response.data[0]
         );
         history.push("/lists");

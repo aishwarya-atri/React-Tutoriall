@@ -18,7 +18,7 @@ function UpdateForm(props) {
 
   useEffect(() => {
     (async () => {
-      const result = await axios("http://localhost:5000/books/" + params.id);
+      const result = await axios("https://react-demo-library.herokuapp.com/db/books/" + params.id);
       setData(result.data);
 
       setStartDate(new Date(result.data["published_date"] + "T00:00:00"));
@@ -33,7 +33,7 @@ function UpdateForm(props) {
     output["published_date"] = startDate.toISOString().split("T")[0];
     output["genre"] = data["genre"]["label"];
     output["quantity"] = data["quantity"];
-    await axios.put("http://localhost:5000/books/" + params.id, output);
+    await axios.put("https://react-demo-library.herokuapp.com/db/books/" + params.id, output);
 
     history.push("/lists");
   };
