@@ -3,9 +3,9 @@ import Select from "react-select";
 import { useHistory } from "react-router-dom";
 
 import axios from "axios";
-import { useForm, Controller } from "react-hook-form";
-import { Input } from "@material-ui/core";
-import { useParams } from "react-router-dom";
+import { useForm, Controller }                           from "react-hook-form";
+import { FormControlLabel , Input , Radio , RadioGroup } from "@material-ui/core";
+import { useParams }                                     from "react-router-dom";
 import DatePicker from "react-datepicker";
 
 function UpdateForm() {
@@ -33,6 +33,7 @@ function UpdateForm() {
     output["published_date"] = startDate.toLocaleString().split(",")[0];
     output["genre"] = data["genre"]["label"];
     output["quantity"] = data["quantity"];
+    output["popular"] = data["popular"];
     await axios.put("https://react-demo-library.herokuapp.com/db/books/" + params.id, output);
 
     history.push("/lists");
@@ -118,6 +119,24 @@ function UpdateForm() {
               control={control}
             />
           </span>
+          <div className="pt-4">
+       <label htmlFor="popular">Popular</label>
+        <Controller
+          defaultValue={data["popular"] || 'Yes'}
+          render={({ field }) => (
+            <RadioGroup aria-label="popular" {...field}  required   >
+              <FormControlLabel
+                value="Yes" id="Yes"
+                control={<Radio />}
+                label="Yes"
+              />
+              <FormControlLabel id="No" value="No" control={<Radio />} label="No" />
+            </RadioGroup>
+          )}
+          name="popular"
+          control={control}
+        />
+  </div>
           <br />
           <br />
           <br />

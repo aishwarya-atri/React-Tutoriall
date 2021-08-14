@@ -54,6 +54,9 @@ function BookList() {
       {
         Header: "Quantity",
         accessor: "quantity",
+      },{
+        Header: "Popular",
+        accessor: "popular",
       },
 
       {

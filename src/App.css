@@ -105,3 +105,9 @@ a:hover{
   display: inline-flex;
   padding-left: 1rem;
 }
+.MuiTypography-body1{
+   font-family: cursive !important;
+   font-size: initial !important;
+   font-weight: 0 !important;
+   line-height: 0 !important;
+}
