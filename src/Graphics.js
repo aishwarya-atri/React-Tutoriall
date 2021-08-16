@@ -10,7 +10,9 @@ function Graphics() {
 
   useEffect(() => {
     (async () => {
-      const result = await axios("https://react-demo-library.herokuapp.com/db/books");
+      const result = await axios(
+        "https://react-demo-library.herokuapp.com/db/books"
+      );
       let ans = [];
 
       let dict = {};
@@ -59,7 +61,7 @@ function Graphics() {
     <div className="w-100">
       <div className="m-auto pie">
         <div className="pb-4 pt-4 text-center">
-          The representation of the genres in the library!
+          A pie chart representing of the genres in the library
         </div>
         <ResponsivePie
           margin={margin}
@@ -125,7 +127,7 @@ function Graphics() {
         />
       </div>
       <div className="line 0 m-auto">
-        The Years the books published
+        A line chart representing number of books published every year
         <div className="line_chart">
           <ResponsiveLine
             data={sampleData}

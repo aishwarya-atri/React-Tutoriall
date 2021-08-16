@@ -6,8 +6,7 @@ function Title() {
       <div className="title-text">
         <div>
           <span>Hello! Welcome to this Library.</span>
-          <div>Click on List to get all the books</div>
-          <div>Click on Add to get all the books</div>
+          <div>Click on the navigation bar to get started! </div>
         </div>
       </div>
     </div>

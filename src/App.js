@@ -5,8 +5,8 @@ import Navbar from "./navbar";
 import CreateForm from "./createForm";
 import BookList from "./bookList";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import UpdateForm                       from "./updateForm";
-import Graphics                         from "./Graphics";
+import UpdateForm from "./updateForm";
+import Graphics from "./Graphics";
 function App() {
   return (
     <BrowserRouter>

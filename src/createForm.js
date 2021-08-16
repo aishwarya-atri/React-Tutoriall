@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import axios from "axios";
 import { useForm, Controller } from "react-hook-form";
-import { Input,FormControlLabel,Radio,RadioGroup } from "@material-ui/core";
+import { Input, FormControlLabel, Radio, RadioGroup } from "@material-ui/core";
 import { Button } from "reactstrap";
 import DatePicker from "react-datepicker";
 
@@ -19,22 +19,26 @@ function CreateForm() {
     // check whether book is present, if yes, update quantity
 
     var get_response = await axios.get(
-      "https://react-demo-library.herokuapp.com/db/books?book_name=" + data["bookname"]
+      "https://react-demo-library.herokuapp.com/db/books?book_name=" +
+        data["bookname"]
     );
 
     let output = {};
 
     output["book_name"] = data["bookname"];
     output["author"] = data["author"];
-    output["published_date"] = startDate.toLocaleString().split(",")[0]
+    output["published_date"] = startDate.toLocaleString().split(",")[0];
     output["genre"] = data["genre"]["value"];
     output["quantity"] = parseInt(data["quantity"]);
-    output["popular"] = data["popular"]
+    output["popular"] = data["popular"];
 
     if (get_response.data.length === 0) {
       // already exists
 
-      await axios.post("https://react-demo-library.herokuapp.com/db/books", output);
+      await axios.post(
+        "https://react-demo-library.herokuapp.com/db/books",
+        output
+      );
       history.push("/lists");
     } else {
       //update Quantity
@@ -50,7 +54,8 @@ function CreateForm() {
         // same book
 
         await axios.put(
-          "https://react-demo-library.herokuapp.com/db/books/" + get_response.data[0]["id"],
+          "https://react-demo-library.herokuapp.com/db/books/" +
+            get_response.data[0]["id"],
           get_response.data[0]
         );
         history.push("/lists");
@@ -99,13 +104,14 @@ function CreateForm() {
         <br />
 
         <label htmlFor="publisheddate">Published Date</label>
-        <span className='published'>
-        <DatePicker
-          id="publisheddate"
-          name="publisheddate"
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-        /></span>
+        <span className="published">
+          <DatePicker
+            id="publisheddate"
+            name="publisheddate"
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+          />
+        </span>
         <br />
         <br />
         <label htmlFor="quantity">Quantity </label>
@@ -150,24 +156,20 @@ function CreateForm() {
             defaultValue=""
           />
         </span>
-<div className="pt-4">
-       <label htmlFor="popular">Popular</label>
-        <Controller
-          defaultValue="Yes"
-          render={({ field }) => (
-            <RadioGroup aria-label="popular"    {...field}>
-              <FormControlLabel
-                value="Yes"
-                control={<Radio />}
-                label="Yes"
-              />
-              <FormControlLabel value="No" control={<Radio />} label="No" />
-            </RadioGroup>
-          )}
-          name="popular"
-          control={control}
-        />
-  </div>
+        <div className="pt-4">
+          <label htmlFor="popular">Popular</label>
+          <Controller
+            defaultValue="Yes"
+            render={({ field }) => (
+              <RadioGroup aria-label="popular" {...field}>
+                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                <FormControlLabel value="No" control={<Radio />} label="No" />
+              </RadioGroup>
+            )}
+            name="popular"
+            control={control}
+          />
+        </div>
         <br />
         <br />
         <br />

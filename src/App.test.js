@@ -57,7 +57,7 @@ describe("My Application", () => {
     fireEvent.click(screen.getByText(/Submit/));
 
     let da = new Date().toLocaleString().split(",")[0];
-    await waitFor(() => screen.getByText("Book 9"),{timeout:3000});
+    await waitFor(() => screen.getByText("Book 9"), { timeout: 3000 });
     let rows = screen.getAllByRole("row");
     let last = rows[rows.length - 1];
     expect(last).toHaveTextContent(/Author 1/);
@@ -81,7 +81,7 @@ describe("My Application", () => {
 
     fireEvent.click(screen.getByText(/Books List/i));
 
-    await waitFor(() => screen.getByText("Book 9"),{timeout:3000});
+    await waitFor(() => screen.getByText("Book 9"), { timeout: 3000 });
 
     let header = screen.getAllByRole("columnheader");
     await expect(header[0]).toHaveTextContent("Book Name");
@@ -111,17 +111,16 @@ describe("My Application", () => {
 
     fireEvent.click(screen.getByText(/Books List/i));
 
-    await waitFor(() => screen.getByText("Book 9"),{ timeout: 3000 }
-    );
+    await waitFor(() => screen.getByText("Book 9"), { timeout: 3000 });
     let rows = screen.getAllByRole("row");
     fireEvent.click(within(rows[rows.length - 1]).getByText("Update"));
-    await waitFor(() => screen.getByText("Update"),{ timeout: 3000 });
+    await waitFor(() => screen.getByText("Update"), { timeout: 3000 });
     let da = Moment(new Date()).format("MM/DD/YYYY");
     let author = screen.getByRole("textbox", { name: "Author" });
     let book_name = screen.getByRole("textbox", { name: "Book Name" });
     let published_date = screen.getByLabelText("Published Date");
     let quantity = screen.getByRole("spinbutton", { name: "Quantity" });
-    const popular = screen.getByLabelText(/Yes/)
+    const popular = screen.getByLabelText(/Yes/);
     // checking values are populated properly
     expect(author).toHaveValue("Author 1");
     expect(book_name).toHaveValue("Book 9");
@@ -130,10 +129,9 @@ describe("My Application", () => {
     expect(screen.getByText("Comedy")).toBeInTheDocument();
     expect(popular.checked).toBe(true);
 
-
     // Changing Input Value
-    let no = screen.getByLabelText(/No/)
-    fireEvent.click(no)
+    let no = screen.getByLabelText(/No/);
+    fireEvent.click(no);
     fireEvent.change(author, { target: { value: "Author Changed" } });
     fireEvent.change(published_date, { target: { value: da } });
     fireEvent.change(quantity, { target: { value: "10" } });
@@ -175,7 +173,7 @@ describe("My Application", () => {
     let rows = screen.getAllByRole("row");
     await fireEvent.click(within(rows[rows.length - 1]).getByText("Delete"));
 
-    await waitForElementToBeRemoved(rows[rows.length - 1],{ timeout: 3000 });
+    await waitForElementToBeRemoved(rows[rows.length - 1], { timeout: 3000 });
 
     rows = screen.getAllByRole("row");
 

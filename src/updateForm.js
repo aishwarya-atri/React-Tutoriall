@@ -3,9 +3,9 @@ import Select from "react-select";
 import { useHistory } from "react-router-dom";
 
 import axios from "axios";
-import { useForm, Controller }                           from "react-hook-form";
-import { FormControlLabel , Input , Radio , RadioGroup } from "@material-ui/core";
-import { useParams }                                     from "react-router-dom";
+import { useForm, Controller } from "react-hook-form";
+import { FormControlLabel, Input, Radio, RadioGroup } from "@material-ui/core";
+import { useParams } from "react-router-dom";
 import DatePicker from "react-datepicker";
 
 function UpdateForm() {
@@ -18,10 +18,12 @@ function UpdateForm() {
 
   useEffect(() => {
     (async () => {
-      const result = await axios("https://react-demo-library.herokuapp.com/db/books/" + params.id);
+      const result = await axios(
+        "https://react-demo-library.herokuapp.com/db/books/" + params.id
+      );
       setData(result.data);
 
-      setStartDate(new Date(result.data["published_date"]+", 00:00:00"));
+      setStartDate(new Date(result.data["published_date"] + ", 00:00:00"));
     })();
   }, [params.id]);
 
@@ -34,7 +36,10 @@ function UpdateForm() {
     output["genre"] = data["genre"]["label"];
     output["quantity"] = data["quantity"];
     output["popular"] = data["popular"];
-    await axios.put("https://react-demo-library.herokuapp.com/db/books/" + params.id, output);
+    await axios.put(
+      "https://react-demo-library.herokuapp.com/db/books/" + params.id,
+      output
+    );
 
     history.push("/lists");
   };
@@ -69,14 +74,13 @@ function UpdateForm() {
           <br />
           <br />
           <label htmlFor="publisheddate">Published Date</label>
-          <span className='published'>
-        <DatePicker
-          id="publisheddate"
-          name="publisheddate"
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-
-           />
+          <span className="published">
+            <DatePicker
+              id="publisheddate"
+              name="publisheddate"
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+            />
           </span>
           <br />
           <br />
@@ -120,23 +124,29 @@ function UpdateForm() {
             />
           </span>
           <div className="pt-4">
-       <label htmlFor="popular">Popular</label>
-        <Controller
-          defaultValue={data["popular"] || 'Yes'}
-          render={({ field }) => (
-            <RadioGroup aria-label="popular" {...field}  required   >
-              <FormControlLabel
-                value="Yes" id="Yes"
-                control={<Radio />}
-                label="Yes"
-              />
-              <FormControlLabel id="No" value="No" control={<Radio />} label="No" />
-            </RadioGroup>
-          )}
-          name="popular"
-          control={control}
-        />
-  </div>
+            <label htmlFor="popular">Popular</label>
+            <Controller
+              defaultValue={data["popular"] || "Yes"}
+              render={({ field }) => (
+                <RadioGroup aria-label="popular" {...field} required>
+                  <FormControlLabel
+                    value="Yes"
+                    id="Yes"
+                    control={<Radio />}
+                    label="Yes"
+                  />
+                  <FormControlLabel
+                    id="No"
+                    value="No"
+                    control={<Radio />}
+                    label="No"
+                  />
+                </RadioGroup>
+              )}
+              name="popular"
+              control={control}
+            />
+          </div>
           <br />
           <br />
           <br />

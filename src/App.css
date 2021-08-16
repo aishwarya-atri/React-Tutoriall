@@ -58,16 +58,16 @@ select {
   .line {
     width: 100% !important;
   }
-  .pie{
+  .pie {
     width: 80% !important;
   }
-  a{
+  a {
     padding-bottom: 1rem;
   }
 }
 
 .pie {
-  width:60%;
+  width: 60%;
   height: 600px;
 }
 .css-2b097c-container {
@@ -92,22 +92,22 @@ select {
   position: relative;
   height: 600px;
 }
-a{
+a {
   text-decoration: none !important;
-  color : #2F4F4F !important;
+  color: #2f4f4f !important;
   padding-right: 1rem;
   padding-left: 1rem;
 }
-a:hover{
+a:hover {
   color: black !important;
 }
-.published{
+.published {
   display: inline-flex;
   padding-left: 1rem;
 }
-.MuiTypography-body1{
-   font-family: cursive !important;
-   font-size: initial !important;
-   font-weight: 0 !important;
-   line-height: 0 !important;
+.MuiTypography-body1 {
+  font-family: cursive !important;
+  font-size: initial !important;
+  font-weight: 0 !important;
+  line-height: 0 !important;
 }
