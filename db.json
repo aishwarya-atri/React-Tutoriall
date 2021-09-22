@@ -1,0 +1,76 @@
+{
+  "books": [
+    {
+      "book_name": "Book 1",
+      "author": "Author 1",
+      "published_date": "8/13/2021",
+      "genre": "Comedy",
+      "quantity": 50,
+      "popular": "Yes",
+      "id": 1
+    },
+    {
+      "book_name": "Book 2",
+      "author": "Author 2",
+      "published_date": "8/7/2012",
+      "genre": "Mystery",
+      "quantity": 11,
+      "popular": "Yes",
+      "id": 2
+    },
+    {
+      "book_name": "Book 3",
+      "author": "Author 3",
+      "published_date": "8/13/2012",
+      "genre": "Horror",
+      "quantity": 7,
+      "popular": "No",
+      "id": 3
+    },
+    {
+      "book_name": "Book 4",
+      "author": "Author 2",
+      "published_date": "8/13/2021",
+      "genre": "Historic",
+      "quantity": 7,
+      "popular": "No",
+      "id": 4
+    },
+    {
+      "book_name": "Book 5",
+      "author": "Author 5",
+      "published_date": "8/11/2011",
+      "genre": "Other",
+      "quantity": 6,
+      "popular": "No",
+      "id": 5
+    },
+    {
+      "book_name": "Book 6",
+      "author": "Author 6",
+      "published_date": "8/13/2000",
+      "genre": "Romance",
+      "quantity": 20,
+      "popular": "No",
+      "id": 6
+    },
+    {
+      "book_name": "Book 7",
+      "author": "Author 3",
+      "published_date": "8/10/2021",
+      "genre": "Mystery",
+      "quantity": 1,
+      "popular": "Yes",
+      "id": 7
+    },
+    {
+      "book_name": "Book 8",
+      "author": "Author 1",
+      "published_date": "8/13/1970",
+      "genre": "Sci-fi",
+      "quantity": 17,
+      "popular": "Yes",
+      "id": 8
+    }
+  ]
+}

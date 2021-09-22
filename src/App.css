@@ -1,0 +1,113 @@
+.mainPage {
+  margin: auto;
+}
+.App {
+  font-family: cursive;
+}
+.Title {
+  background: url(images/library1.jpeg) no-repeat;
+  background-size: cover;
+  height: 93vh;
+  display: inline-grid;
+}
+.App {
+  height: 93vh;
+}
+.title-text {
+  display: flex;
+  justify-content: center;
+  display: contents;
+  color: white;
+  height: 52rem;
+  font-weight: bold;
+  letter-spacing: 7px;
+  max-width: max-content;
+}
+.form {
+  width: fit-content;
+}
+.MuiInput-root {
+  margin-left: 1.5rem !important;
+}
+
+.top {
+  border: 1px solid black;
+  margin: auto;
+}
+.pagination {
+  padding: 0.5rem;
+  justify-content: center;
+}
+select {
+  margin-left: 1rem;
+}
+.page {
+  margin-left: 1rem;
+}
+@media (max-width: 400px) {
+  .App {
+    font-size: x-small;
+  }
+  input {
+    font-size: x-small !important;
+  }
+  .mainGraphics {
+    width: 100% !important;
+    height: 300px !important;
+  }
+  .line {
+    width: 100% !important;
+  }
+  .pie {
+    width: 80% !important;
+  }
+  a {
+    padding-bottom: 1rem;
+  }
+}
+
+.pie {
+  width: 60%;
+  height: 600px;
+}
+.css-2b097c-container {
+  width: 73%;
+  padding-left: 1rem;
+}
+.style {
+  display: flex;
+}
+.error {
+  text-align: center;
+}
+.line {
+  padding-top: 6rem;
+  text-align: center;
+  width: 50%;
+  height: 600px;
+}
+.line_chart {
+  fontfamily: consolas, sans-serif;
+  textalign: center;
+  position: relative;
+  height: 600px;
+}
+a {
+  text-decoration: none !important;
+  color: #2f4f4f !important;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+a:hover {
+  color: black !important;
+}
+.published {
+  display: inline-flex;
+  padding-left: 1rem;
+}
+.MuiTypography-body1 {
+  font-family: cursive !important;
+  font-size: initial !important;
+  font-weight: 0 !important;
+  line-height: 0 !important;
+}
